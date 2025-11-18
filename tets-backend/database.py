@@ -1,8 +1,7 @@
 import string
-from xml.dom.minidom import Text
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, JSON
+from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, JSON, Float, Text
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker, relationship, Session
 import os
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./sinsenet.db"
@@ -135,6 +134,20 @@ class CommentModel(Base):
     timestamp = Column[str](String)
 
     post = relationship("PostModel", back_populates="comments")
+
+class CourseModel(Base):
+    __tablename__ = "courses"
+
+    id = Column[int](Integer, primary_key=True, index=True)
+    title = Column[str](String, nullable=False)
+    educator = Column[str](String, nullable=False)
+    image = Column[str](String)
+    duration = Column[str](String)
+    students = Column[str](String)
+    rating = Column[Float]
+    level = Column[str](String)
+    price = Column[str](String)
+    description = Column[str](Text)
 
 def init_db():
     Base.metadata.create_all(bind=engine)

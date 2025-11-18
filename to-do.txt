@@ -1,0 +1,6 @@
+1. Przetestować połączenie z API używając curl (zadanie 7 z workflow)
+2. Uruchomić seed_data.py aby wypełnić bazę danymi (wymaga środowiska wirtualnego)
+3. Sprawdzić czy backend FastAPI działa i odpowiada na żądania
+4. Zweryfikować synchronizację ID między frontendem i backendem
+5. Dodać obsługę błędów i loading states w komponentach
+6. Zoptymalizować transformację danych z API

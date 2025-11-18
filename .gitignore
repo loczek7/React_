@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+ENV/
+
+# Playwright
+playwright-report/
+test-results/
+*.png
+
+# Screenshots (opcjonalnie - można je commitować)
+# screenshots/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Example folder (jeśli nie jest potrzebny)
+# example/
+
