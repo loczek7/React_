@@ -32,3 +32,14 @@ Thumbs.db
 # Example folder (jeśli nie jest potrzebny)
 # example/
 
+# Environment files
+.env
+.env.local
+.env.*.local
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploads
+tets-backend/uploads/
+

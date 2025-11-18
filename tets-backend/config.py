@@ -2,13 +2,17 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-SECTRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-this-in-production-very-long-string")
+# Poprawiona nazwa zmiennej (było SECTRET_KEY, powinno być SECRET_KEY)
+SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-this-in-production-very-long-string")
+# Zachowaj starą nazwę dla kompatybilności wstecznej
+SECTRET_KEY = SECRET_KEY
 ALGORITHM = "HS256"
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 15
 REFRESH_TOKEN_EXPIRE_DAYS = 7
 
-DATABASE_URL = "sqlite:///./sinsenet.db"
+# Użyj zmiennej środowiskowej lub domyślnej ścieżki względnej
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./sinsenet.db")
 
 ALLOWED_ORIGINS = [
     "http://localhost:3001",
@@ -48,7 +52,7 @@ def load_dev_users():
                 parts = line.split(":")
                 if len(parts) == 3:
                     email, password, user_id = parts
-                    user.append({
+                    users.append({
                         "email": email.strip(),
                         "password": password.strip(),
                         "user_id": user_id.strip()

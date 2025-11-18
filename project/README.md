@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EduLearn Frontend - Next.js
 
-## Getting Started
+Frontend aplikacji edukacyjnej EduLearn zbudowany w Next.js.
 
-First, run the development server:
+## 🚀 Szybki Start
 
+### Instalacja
+
+1. Zainstaluj zależności:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. (Opcjonalnie) Skopiuj plik .env.example do .env.local:
+```bash
+# Windows
+copy .env.example .env.local
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Linux/Mac
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Zainstaluj przeglądarki Playwright (dla testów):
+```bash
+npx playwright install
+```
 
-## Learn More
+4. Uruchom serwer deweloperski:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Aplikacja będzie dostępna pod adresem: http://localhost:3001
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Konfiguracja
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Zmienne Środowiskowe
 
-## Deploy on Vercel
+Utwórz plik `.env.local` w katalogu `project/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```env
+FASTAPI_URL=http://localhost:8000
+NEXT_PUBLIC_API_URL=http://localhost:3001/api
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Uwaga:** Upewnij się, że backend FastAPI działa na porcie 8000!
+
+## 🧪 Testy
+
+### Uruchomienie testów Playwright
+
+```bash
+# Tryb headless (bez widocznej przeglądarki)
+npm run test:e2e
+
+# Tryb headed (z widoczną przeglądarką)
+npm run test:e2e:headed
+```
+
+Screenshoty z testów są zapisywane w katalogu `screenshots/`.
+
+## 📁 Struktura
+
+```
+project/
+├── app/
+│   ├── api/              # Next.js API routes (proxy do FastAPI)
+│   ├── components/       # Komponenty React
+│   ├── lib/              # Funkcje pomocnicze
+│   ├── types/            # Typy TypeScript
+│   └── page.tsx          # Strona główna
+├── tests/                # Testy Playwright
+├── screenshots/          # Screenshoty z testów
+└── playwright.config.ts  # Konfiguracja Playwright
+```
+
+## 🛠️ Skrypty NPM
+
+- `npm run dev` - Uruchom serwer deweloperski (port 3001)
+- `npm run build` - Zbuduj aplikację produkcyjną
+- `npm run start` - Uruchom aplikację produkcyjną
+- `npm run lint` - Uruchom linter
+- `npm run test:e2e` - Uruchom testy E2E (headless)
+- `npm run test:e2e:headed` - Uruchom testy E2E (headed)
+
+## 📝 Funkcjonalności
+
+- ✅ Strona główna z feedem postów
+- ✅ Strona kursów
+- ✅ Biblioteka użytkownika
+- ✅ Wiadomości
+- ✅ Powiadomienia
+- ✅ Postęp nauki
+- ✅ Tworzenie i edycja postów
+- ✅ Połączenie z API FastAPI przez Next.js API routes
+
+## 🔗 Połączenie z Backendem
+
+Frontend komunikuje się z backendem przez Next.js API routes (`/api/posts`, `/api/courses`), które działają jako proxy do FastAPI.
+
+Upewnij się, że:
+1. Backend FastAPI działa na http://localhost:8000
+2. Zmienna `FASTAPI_URL` w `.env.local` wskazuje na właściwy adres
+
+## 📄 Licencja
+
+Ten projekt jest prywatny.
