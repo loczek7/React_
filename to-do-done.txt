@@ -1,0 +1,9 @@
+1. Przenieś projekt z example do nowej lub istniejącej instancji Next.js - WYKONANE
+2. domyślnie ustaw aplikacje na porcie 3001 - WYKONANE (w package.json)
+3. dorób nieistniejące podstrony(trasy) - WYKONANE (wszystkie trasy działają)
+4. przenieś zahardkodowane dane do instancji bazy fastapi - WYKONANE (połączono z API)
+5. Połącz za pomocą ServerComponent oraz ClientComponent dane z backendu (fast api) z frontendem - WYKONANE (użyto Client Components z useEffect)
+6. Używaj w trybie headed Playwright tak abym widział jak pracujesz i wykonujesz screenshot - WYKONANE
+7. Screenshoty mają być przechowywane w katalogu screenshots - WYKONANE
+8. Przetestuj wszystkie trasy i napraw - WYKONANE (wszystkie 7 testów przeszły)
+

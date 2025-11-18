@@ -13,6 +13,7 @@ DATABASE_URL = "sqlite:///./sinsenet.db"
 ALLOWED_ORIGINS = [
     "http://localhost:3001",
     "http://localhost:3002",
+    "http://127.0.0.1:3001",
 ]
 
 DEV_USERS_FILE = Path(__file__).parent / "dev_users.json"
