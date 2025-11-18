@@ -1,0 +1,44 @@
+a {
+    color: blue;
+    text-decoration: none;
+
+}
+
+a:hover {
+  color: darkblue;
+}
+h1 {
+  font-size: 2rem;
+  color: var(--foreground);
+}
+p {
+  font-size: 1rem;
+  color: var(--foreground);
+}
+div {
+  margin: 20px;
+}
+button {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: darkgray;
+}
+button:active {
+  background-color: gray;
+}
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+.links {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
